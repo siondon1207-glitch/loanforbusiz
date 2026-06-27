@@ -1,23 +1,985 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <title>Home</title>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width" />
-    <!--
-      Need a visual blank slate?
-      Remove all code in `styles.css`!
-    -->
-    <link rel="stylesheet" href="styles.css" />
-    <script type="module" src="script.js"></script>
-  </head>
-  <body>
-    <nav>
-      <a href="/" aria-current="page">Home</a>
-      <a href="/page2.html">Other page</a>
-    </nav>
+
+
+    <!-- JSON-LD Structured Data for SEO (Optimized for Naver/Google Snippets and LLM Crawlers) -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebPage",
+        "name": "2026년 사업자대출서류 종합 가이드 센터",
+        "url": "https://yourwebsite.com/business-loan-documents",
+        "description": "개인 및 법인사업자 대출 심사 시 필수적으로 제출해야 하는 서류 종류와 발급 기관, 2026년 마이데이터 연동 가이드를 제시합니다.",
+        "publisher": {
+            "@type": "Organization",
+            "name": "비즈니스 금융 지원 정보 센터"
+        },
+        "mainEntity": {
+            "@type": "FAQPage",
+            "mainEntity": [
+                {
+                    "@type": "Question",
+                    "name": "개인사업자가 대출을 진행할 때 가장 중요하게 챙겨야 할 필수 서류 종류는 무엇인가요?",
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "개인사업자의 가장 핵심 서류는 국세청 발급 사업자등록증명원, 최근 3개년 부가가치세 과세표준증명원(또는 소득금액증명원), 그리고 지방세 및 국세 납세증명서가 있습니다. 사업장 형태에 따라 임대차계약서 사본이 필수로 추가됩니다."
+                    }
+                },
+                {
+                    "@type": "Question",
+                    "name": "2026년부터 도입된 행정 마이데이터 서비스로 서류 제출 단계를 생략할 수 있나요?",
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "일부 금융기관의 다이렉트 앱이나 모바일 어플의 자동 스크래핑 시스템을 이용하면 공인인증서 인증 한번으로 상당수 행정서류가 자동 수집됩니다. 다만 세부 심사가 필요하거나 법인 임원 서류의 경우 별도 첨부가 여전히 필수적입니다."
+                    }
+                }
+            ]
+        }
+    }
+    </script>
+
+    <!-- CSS Styling (Modern, Soft & Readable Aesthetic) -->
+    <style>
+        /* CSS Variables: Pastel, trustworthy, non-rigid color scheme */
+        :root {
+            --primary-color: #4A90E2; /* Soft sky blue */
+            --secondary-color: #50B1A8; /* Warm teal */
+            --accent-color: #E07A5F; /* Soft terracotta for subtle highlighting */
+            --bg-light: #FAF8F5; /* Cozy off-white background */
+            --card-bg: #FFFFFF;
+            --text-dark: #2F3E46; /* Deep charcoal for heavy readability */
+            --text-muted: #6B7A82;
+            --border-color: #E8E5E0;
+            --success-color: #6EA875;
+        }
+
+        /* Basic Reset */
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Apple SD Gothic Neo', 'Noto Sans KR', 'Malgun Gothic', sans-serif;
+            background-color: var(--bg-light);
+            color: var(--text-dark);
+            line-height: 1.8;
+            font-size: 16px;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.2s ease;
+        }
+
+        ul, li {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        h1, h2, h3, h4 {
+            margin: 0;
+            color: var(--text-dark);
+            font-weight: 700;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* Header Area */
+        .header {
+            background-color: var(--card-bg);
+            border-bottom: 1px solid var(--border-color);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .header-menu {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 18px 0;
+        }
+
+        .brand-title {
+            font-size: 1.25rem;
+            font-weight: 800;
+            color: var(--primary-color);
+            letter-spacing: -0.5px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 20px;
+        }
+
+        .nav-link {
+            font-size: 0.95rem;
+            color: var(--text-dark);
+            font-weight: 500;
+        }
+
+        .nav-link:hover {
+            color: var(--primary-color);
+        }
+
+        /* Hero Section with Soft Gradient Background */
+        .hero {
+            background: linear-gradient(135deg, #EEF5FC 0%, #F5F0EA 100%);
+            padding: 90px 0;
+            text-align: center;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            line-height: 1.4;
+            margin-bottom: 20px;
+            letter-spacing: -1px;
+            color: #1E293B;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            color: var(--text-muted);
+            max-width: 800px;
+            margin: 0 auto 35px auto;
+            font-weight: 400;
+        }
+
+        .cta-btn {
+            display: inline-block;
+            background-color: var(--accent-color);
+            color: white;
+            padding: 16px 36px;
+            border-radius: 30px;
+            font-weight: 600;
+            font-size: 1.05rem;
+            box-shadow: 0 4px 15px rgba(224, 122, 95, 0.2);
+            transition: transform 0.2s, background-color 0.2s;
+        }
+
+        .cta-btn:hover {
+            transform: translateY(-2px);
+            background-color: #D0694E;
+        }
+
+        /* Main Content Section */
+        .section {
+            padding: 80px 0;
+        }
+
+        .section-gray {
+            background-color: #F5F4F0;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .section-header h2 {
+            font-size: 2rem;
+            margin-bottom: 15px;
+            letter-spacing: -0.8px;
+        }
+
+        .section-header p {
+            color: var(--text-muted);
+            font-size: 1.05rem;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        /* Grid Cards and Layout */
+        .grid-3 {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+        }
+
+        .grid-2 {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 30px;
+        }
+
+        .card {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            padding: 35px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.02);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.05);
+        }
+
+        .card h3 {
+            font-size: 1.35rem;
+            margin-bottom: 15px;
+            border-bottom: 2px solid var(--border-color);
+            padding-bottom: 12px;
+            color: var(--text-dark);
+        }
+
+        .card p {
+            font-size: 0.95rem;
+            color: var(--text-muted);
+            margin-bottom: 20px;
+        }
+
+        /* Beautiful Responsive Table */
+        .table-container {
+            overflow-x: auto;
+            background-color: var(--card-bg);
+            border-radius: 16px;
+            border: 1px solid var(--border-color);
+            margin: 40px 0;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.01);
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            text-align: left;
+            font-size: 0.95rem;
+        }
+
+        th {
+            background-color: var(--primary-light);
+            color: var(--text-dark);
+            font-weight: 600;
+            padding: 18px;
+            border-bottom: 2px solid var(--border-color);
+        }
+
+        td {
+            padding: 18px;
+            border-bottom: 1px solid var(--border-color);
+            color: var(--text-dark);
+            vertical-align: top;
+        }
+
+        tr:last-child td {
+            border-bottom: none;
+        }
+
+        .badge {
+            display: inline-block;
+            padding: 4px 10px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            border-radius: 4px;
+            text-align: center;
+        }
+
+        .badge-primary {
+            background-color: #E2ECF7;
+            color: #2F699E;
+        }
+
+        .badge-secondary {
+            background-color: #E2F0EE;
+            color: #3B827A;
+        }
+
+        /* Custom Interactive Consultation Form & Checklist */
+        .interactive-section {
+            background-color: #EEF5FC;
+            border-radius: 24px;
+            padding: 50px;
+            margin: 50px 0;
+            border: 1px solid var(--border-color);
+        }
+
+        .form-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+
+        .form-control-group {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .form-label {
+            font-size: 0.95rem;
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: var(--text-dark);
+        }
+
+        .form-select, .form-input {
+            padding: 12px 16px;
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            background-color: var(--card-bg);
+            font-size: 0.95rem;
+            color: var(--text-dark);
+            outline: none;
+        }
+
+        .form-select:focus, .form-input:focus {
+            border-color: var(--primary-color);
+        }
+
+        .form-full-width {
+            grid-column: span 2;
+        }
+
+        .agree-container {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-top: 15px;
+            font-size: 0.9rem;
+        }
+
+        .btn-submit {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 1.05rem;
+            cursor: pointer;
+            transition: background-color 0.2s;
+            width: 100%;
+        }
+
+        .btn-submit:hover {
+            background-color: #3678C4;
+        }
+
+        /* Real-time Checklist Result Panel */
+        .checklist-result-panel {
+            background-color: var(--card-bg);
+            border-radius: 16px;
+            padding: 30px;
+            margin-top: 30px;
+            border: 1px solid var(--border-color);
+            display: none;
+        }
+
+        .checklist-title {
+            font-size: 1.25rem;
+            font-weight: 700;
+            margin-bottom: 15px;
+            color: var(--secondary-color);
+            border-bottom: 2px solid var(--border-color);
+            padding-bottom: 8px;
+        }
+
+        .checklist-items {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .checklist-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 0;
+            border-bottom: 1px dashed var(--border-color);
+        }
+
+        .checklist-item-desc {
+            font-size: 0.95rem;
+            color: var(--text-dark);
+        }
+
+        .checklist-item-origin {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            background-color: #F5F4F0;
+            padding: 2px 8px;
+            border-radius: 4px;
+        }
+
+        /* FAQ Accordion Styling */
+        .faq-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            margin-bottom: 15px;
+            overflow: hidden;
+        }
+
+        .faq-trigger {
+            width: 100%;
+            text-align: left;
+            padding: 22px 30px;
+            background: none;
+            border: none;
+            font-size: 1.05rem;
+            font-weight: 600;
+            color: var(--text-dark);
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .faq-trigger::after {
+            content: "+";
+            font-size: 1.2rem;
+            color: var(--text-muted);
+        }
+
+        .faq-item.active .faq-trigger::after {
+            content: "-";
+        }
+
+        .faq-content {
+            padding: 0 30px;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out, padding 0.3s ease-out;
+            background-color: #FCFAF7;
+            font-size: 0.95rem;
+            color: var(--text-muted);
+        }
+
+        .faq-item.active .faq-content {
+            padding: 20px 30px;
+            max-height: 500px;
+            border-top: 1px solid var(--border-color);
+        }
+
+        /* Authoritative External Sources Block */
+        .reference-box {
+            background-color: #FBF9F6;
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            padding: 40px;
+            margin: 50px 0;
+        }
+
+        .reference-box h3 {
+            font-size: 1.3rem;
+            margin-bottom: 20px;
+            color: var(--text-dark);
+        }
+
+        .ref-links {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+        }
+
+        .ref-link-card {
+            background-color: var(--card-bg);
+            padding: 15px 20px;
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+        }
+
+        .ref-link-card a {
+            font-weight: 600;
+            font-size: 0.95rem;
+            color: var(--primary-color);
+        }
+
+        .ref-link-card span {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+        }
+
+        /* Footer Area */
+        .footer {
+            background-color: var(--text-dark);
+            color: #D1D5DB;
+            padding: 60px 0;
+            font-size: 0.85rem;
+            line-height: 1.7;
+            border-top: 1px solid var(--border-color);
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-col h4 {
+            color: white;
+            font-size: 1rem;
+            margin-bottom: 15px;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding-top: 20px;
+            text-align: center;
+            color: #9CA3AF;
+        }
+
+        /* Media Queries for Responsiveness */
+        @media (max-width: 992px) {
+            .grid-3 {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+            .grid-3, .grid-2, .ref-links, .form-grid {
+                grid-template-columns: 1fr;
+            }
+            .form-full-width {
+                grid-column: span 1;
+            }
+            .interactive-section {
+                padding: 30px 20px;
+            }
+            .footer-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Header Navigation -->
+    <header class="header">
+        <div class="container header-menu">
+            <a href="/" class="brand-title">BIZ FINANCE DOCS</a>
+            <nav class="nav-links">
+                <a class="nav-link" href="#guide-intro">서류 중요성</a>
+                <a class="nav-link" href="#document-table">개인 vs 법인 비교</a>
+                <a class="nav-link" href="#regional-section">지자체 보증 정보</a>
+                <a class="nav-link" href="#interactive-tool">서류 자가진단</a>
+                <a class="nav-link" href="#detailed-info">세부 분석</a>
+                <a class="nav-link" href="#faq-section">자주 묻는 질문</a>
+            </nav>
+        </div>
+    </header>
+
     <main>
-      <h1>Home page</h1>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="container">
+                <h1>2026년 사업자대출서류 완벽 준비 가이드</h1>
+                <p>소상공인부터 법인대표까지, 복잡한 증빙 문서를 한 번에 해결하는 스마트 행정 가이드. 2026년 행정 마이데이터 서비스와 온·오프라인 발급 경로를 실시간으로 비교하고 필요한 서류 목록을 간편하게 계산해 보세요.</p>
+                <a href="#interactive-tool" class="cta-btn">내 맞춤형 서류 조회하기</a>
+            </div>
+        </section>
+
+        <!-- Section 1: Introduction -->
+        <section class="section" id="guide-intro">
+            <div class="container">
+                <div class="section-header">
+                    <h2>사업자 자금 조달의 첫 단추, 올바른 서류 준비인 이유</h2>
+                    <p>사업을 운영하다 보면 시설 확보, 운영 자금 부족, 신제품 개발 등 다양한 목적으로 금융 수혈이 필요한 시기가 도래합니다. 이때 모든 은행과 보증기관이 제일 먼저 요구하는 것이 바로 사업자대출서류입니다.</p>
+                </div>
+
+                <div class="grid-3">
+                    <div class="card">
+                        <h3>01. 신용 및 매출의 투명성 입증</h3>
+                        <p>금융기관은 신청 주체의 재무 상태와 정상 운영 여부를 엄밀히 검증하고자 합니다. 이 과정에서 사업자등록증명과 국세청 부가가치세 과세표준증명원은 매출 건전성을 대변하는 핵심 증빙 지표가 됩니다.</p>
+                    </div>
+                    <div class="card">
+                        <h3>02. 세금 체납 여부 실시간 스크래핑</h3>
+                        <p>금융 조달 심사에서 납세의 의무 이행은 심사의 절대 조건입니다. 국세완납증명 및 지방세완납증명서는 아주 작은 한도의 단기 신용 자금을 신청하더라도 무조건 지참해야만 하는 핵심 선결 요건입니다.</p>
+                    </div>
+                    <div class="card">
+                        <h3>03. 2026년 마이데이터 시스템 연동</h3>
+                        <p>현대 디지털 금융 혁신에 따라 비대면 스마트폰 환경이 발달했습니다. 시중 은행 모바일 앱과 핀테크 플랫폼 연동을 통한 비대면 마이데이터 자동 전송이 점차 확대되고 있어 사전에 간편 인증서만 가입해 두면 시간과 노력을 획기적으로 줄일 수 있습니다.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 2: Personal vs Corporate Comparison Table -->
+        <section class="section section-gray" id="document-table">
+            <div class="container">
+                <div class="section-header">
+                    <h2>개인사업자 vs 법인사업자 제출 서류 비교 목록</h2>
+                    <p>경영 주체 형태에 따라 요구되는 법적 행정 문서의 범위와 종류가 완전히 달라집니다. 어떤 점이 다르고 어디서 발급받아야 하는지 상세히 비교해 보시기 바랍니다.</p>
+                </div>
+
+                <div class="table-container">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>구분</th>
+                                <th>필수 구비 서류 목록</th>
+                                <th>주요 발급 기관 / 온라인 사이트</th>
+                                <th>용도 및 심사 포인트</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><span class="badge badge-primary">개인사업자</span></td>
+                                <td>
+                                    1. 사업자등록증 또는 사업자등록증명원<br>
+                                    2. 최근 3개년 소득금액증명원<br>
+                                    3. 부가가치세 과세표준증명원<br>
+                                    4. 국세 및 지방세 완납증명서<br>
+                                    5. 사업장 임대차계약서 사본<br>
+                                    6. 주민등록등초본
+                                </td>
+                                <td>
+                                    국세청 홈택스 온라인포털<br>
+                                    정부24 민원센터 홈페이지<br>
+                                    모바일 토스 및 카카오톡 앱
+                                </td>
+                                <td>
+                                    개인사업체의 연간 실 매출 규모를 산정하고 대표자 본인의 신용 평가 및 채무 상환 지불 능력을 입증하기 위해 제출합니다.
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><span class="badge badge-secondary">법인사업자</span></td>
+                                <td>
+                                    1. 법인등기사항전부증명서 (법인등기부등본)<br>
+                                    2. 법인인감증명서 및 법인 주주명부<br>
+                                    3. 최근 3개년도 표준 재무제표증명원<br>
+                                    4. 법인 국세 및 지방세 납세증명서<br>
+                                    5. 정관 사본 (원본대조필 날인)<br>
+                                    6. 대표이사 개인 주민등록 등초본 및 신분증
+                                </td>
+                                <td>
+                                    대법원 인터넷등기소 온라인 사이트<br>
+                                    담당 세무사 / 회계사 확인 날인본<br>
+                                    정부24 및 국세청 홈택스
+                                </td>
+                                <td>
+                                    법인의 주주 구조, 임원 현황, 자본금 상태를 파악하며, 복식부기 기반 재무제표의 부채 비율과 이자보상배율을 심사하여 신용한도를 책정합니다.
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 3: Regional Guarantees Information (SEO Optimization with Regional Names) -->
+        <section class="section" id="regional-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2>전국 지자체 신용보증재단 연계 및 특별 자금 신청 요령</h2>
+                    <p>정부지원 정책 자금이나 저금리 협약 융자를 받으려면 거주하고 계시는 지자체별 보증재단을 경유해야 합니다. 지역별 요건과 신청 안내 정보를 전해드립니다.</p>
+                </div>
+
+                <div class="card" style="margin-bottom: 30px;">
+                    <h3>지자체 보증 지원 네트워크 안내</h3>
+                    <p>우리나라의 대표적인 행정망인 <strong>서울</strong>, <strong>부산</strong>, <strong>인천</strong>, <strong>대구</strong>, <strong>광주</strong>, <strong>대전</strong>, <strong>울산</strong>, <strong>세종</strong> 등의 대도시부터 경기도의 <strong>수원</strong>, <strong>성남</strong>, <strong>고양</strong>, <strong>용인</strong>, <strong>부천</strong>, <strong>안산</strong>, <strong>남양주</strong>, <strong>안양</strong>, <strong>평택</strong> 지역 그리고 강원특별자치도의 <strong>춘천</strong>, <strong>원주</strong>, <strong>강릉</strong>, 충청북도의 <strong>청주</strong>, <strong>충주</strong>, 충청남도의 <strong>천안</strong>, <strong>아산</strong>, 전북특별자치도의 <strong>전주</strong>, <strong>군산</strong>, <strong>익산</strong>, 전라남도의 <strong>여수</strong>, <strong>순천</strong>, <strong>목포</strong>, 경상북도의 <strong>포항</strong>, <strong>구미</strong>, <strong>경주</strong>, 경상남도의 <strong>창원</strong>, <strong>김해</strong>, <strong>양산</strong> 그리고 <strong>제주</strong>에 이르기까지 전국 30여 개 이상의 모든 행정 구역 단위에는 전용 신용보증재단이 설치되어 경영 안정 목적의 다양한 특례 보증 자금을 지원해 주고 있습니다.</p>
+                    <p>이곳을 통해 상대적으로 이자율이 낮은 지원금을 받으려 할 때도 기본적으로 위의 사업자등록증명 및 부가가치세 증명서가 필수로 요구됩니다. 신규로 가게를 차린 지 얼마 되지 않아 당해 연도 소득 증빙이 아예 곤란한 영세 점주 혹은 소상공인이라 할지라도, 지역 보증재단의 신용보증서에 가입하게 되면 비교적 저렴한 금리로 대출을 승인받을 수 있는 큰 장점이 있습니다.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 4: Interactive Self-Diagnosis Checklist & Consultation Form (Dwell-Time Optimization) -->
+        <section class="section section-gray" id="interactive-tool">
+            <div class="container">
+                <div class="section-header">
+                    <h2>내 사업장 정보 기반 필수 서류 자동 계산기</h2>
+                    <p>아래 입력폼에 사장님의 현황을 정확히 기입하시면, 제출처에 제출해야 할 개인/법인별 필수 서류 목록이 즉시 도출됩니다. 항목들을 자세히 적어주실수록 상담의 정확성이 높아집니다.</p>
+                </div>
+
+                <div class="interactive-section">
+                    <form id="loanDocForm" onsubmit="event.preventDefault(); calculateRequiredDocs();">
+                        <div class="form-grid">
+                            <div class="form-control-group">
+                                <label class="form-label" for="userName">신청인 또는 대표자명 (필수)</label>
+                                <input type="text" id="userName" class="form-input" placeholder="홍길동" required>
+                            </div>
+                            <div class="form-control-group">
+                                <label class="form-label" for="userPhone">휴대폰 번호 (필수)</label>
+                                <input type="tel" id="userPhone" class="form-input" placeholder="01012345678" required>
+                            </div>
+                            <div class="form-control-group">
+                                <label class="form-label" for="bizType">사업 형태 구분 (필수)</label>
+                                <select id="bizType" class="form-select" required>
+                                    <option value="">사업 주체 선택</option>
+                                    <option value="personal">개인사업자</option>
+                                    <option value="corporate">법인사업자</option>
+                                    <option value="ready">예비창업자 / 신규 등록자</option>
+                                </select>
+                            </div>
+                            <div class="form-control-group">
+                                <label class="form-label" for="bizDuration">사업 영위 기간 (필수)</label>
+                                <select id="bizDuration" class="form-select" required>
+                                    <option value="">사업 업력 선택</option>
+                                    <option value="under6m">6개월 미만 초기 창업</option>
+                                    <option value="6m1y">6개월 이상 ~ 1년 미만</option>
+                                    <option value="1y3y">1년 이상 ~ 3년 미만</option>
+                                    <option value="over3y">3년 이상 안정 가동 중</option>
+                                </select>
+                            </div>
+                            <div class="form-control-group">
+                                <label class="form-label" for="bizRevenue">평균 연간 예상 매출 규모 (선택)</label>
+                                <select id="bizRevenue" class="form-select">
+                                    <option value="">연매출액 선택</option>
+                                    <option value="under50">연 5천만 원 미만</option>
+                                    <option value="50to100">연 5천만 원 이상 ~ 1억 원 미만</option>
+                                    <option value="100to300">연 1억 원 이상 ~ 3억 원 미만</option>
+                                    <option value="over300">연 3억 원 이상 규모</option>
+                                </select>
+                            </div>
+                            <div class="form-control-group">
+                                <label class="form-label" for="loanAmount">희망 자금 금액 규모 (선택)</label>
+                                <input type="number" id="loanAmount" class="form-input" placeholder="예시: 5000 (단위: 만원)">
+                            </div>
+                            <div class="form-control-group form-full-width">
+                                <label class="form-label" for="bizLocation">사업장 소지 소재지 지역 선택 (필수)</label>
+                                <select id="bizLocation" class="form-select" required>
+                                    <option value="">현재 영업 중인 지역 선택</option>
+                                    <option value="seoul">서울특별시</option>
+                                    <option value="gyeonggi">경기도</option>
+                                    <option value="incheon">인천광역시</option>
+                                    <option value="busan">부산광역시</option>
+                                    <option value="daegu">대구광역시</option>
+                                    <option value="gwangju">광주광역시</option>
+                                    <option value="daejeon">대전광역시</option>
+                                    <option value="ulsan">울산광역시</option>
+                                    <option value="sejong">세종특별자치시</option>
+                                    <option value="etc">기타 지방 도지역</option>
+                                </select>
+                            </div>
+                            <div class="form-control-group form-full-width">
+                                <div class="agree-container">
+                                    <input type="checkbox" id="privacyConsent" required>
+                                    <label for="privacyConsent">개인 신용 정보 수집 및 이용 제공 동의 및 가이드라인 확인 메일 전송에 동의합니다. (필수)</label>
+                                </div>
+                            </div>
+                        </div>
+                        <button type="submit" class="btn-submit">내 맞춤 필수 서류 실시간 진단 및 목록 계산하기</button>
+                    </form>
+
+                    <!-- Dynamically Loaded Checklist Result Panel -->
+                    <div id="resultPanel" class="checklist-result-panel">
+                        <div class="checklist-title">고객님을 위한 맞춤형 사업자대출서류 체크리스트</div>
+                        <p style="font-size: 0.9rem; margin-bottom: 20px; color: var(--text-muted);">아래 도출된 서류 리스트는 심사를 받기 전에 반드시 온/오프라인을 통하여 최신 유효기간(최근 1개월 이내 발급분)으로 준비해야 부결 가능성을 크게 줄일 수 있습니다.</p>
+                        <div id="checklistResult" class="checklist-items">
+                            <!-- JS will inject elements here -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 5: Authoritative Sources & External Links (Strict SEO Link Policy applied) -->
+        <section class="section" id="authority-sources">
+            <div class="container">
+                <div class="reference-box">
+                    <h3>정확한 공인 행정 서류 발급처 및 외부 공식 포털</h3>
+                    <p>아래 사이트들은 사업자대출서류 발급 신청을 안전하고 빠르고 간편하게 진행할 수 있는 대한민국 행정 및 법원 공식 온라인 웹서비스입니다. 위조 및 누락이 없는 신뢰성 있는 조회를 위해 반드시 공인된 사이트를 이용해 주십시오.</p>
+                    
+                    <div class="ref-links">
+                        <div class="ref-link-card">
+                            <a href="https://loanforbusio.koreahankang.com" target="_blank" rel="noopener noreferrer">Reliabledone 비즈니스 금융 가이드 (사업자 서류 규정)</a>
+                            <span>대출 형태별 구비요령 지침 해설 및 비대면 온라인 접수 기준 안내 웹사이트</span>
+                        </div>
+                        <div class="ref-link-card">
+                            <a href="https://www.gov.kr/" target="_blank" rel="noopener noreferrer">대한민국 정부24 대표 민원실</a>
+                            <span>주민등록등초본, 지방세 납세증명, 지적도 및 건축물관리대장 발급 공식 포털</span>
+                        </div>
+                        <div class="ref-link-card">
+                            <a href="https://www.hometax.go.kr/" target="_blank" rel="noopener noreferrer">국세청 홈택스 종합 세무행정 서비스</a>
+                            <span>사업자등록증명원, 소득금액증명원, 부가가치세 과세표준증명 및 국세완납증명 공식 발급처</span>
+                        </div>
+                        <div class="ref-link-card">
+                            <a href="http://www.iros.go.kr/" target="_blank" rel="noopener noreferrer">대법원 인터넷등기소 법원 등기 시스템</a>
+                            <span>법인등기사항전부증명서(법인등기부등본) 및 부동산 등기부등본 열람 발급 사이트</span>
+                        </div>
+                        <div class="ref-link-card">
+                            <a href="https://namu.wiki/w/%EB%8C%80%EC%B6%9C" target="_blank" rel="noopener noreferrer">나무위키 금융 대출 백과사전 정의</a>
+                            <span>대출 및 신용 거래의 연원과 종류, 금융 용어 정의 및 금리 산정의 기본 원리 분석 정보</span>
+                        </div>
+                        <div class="ref-link-card">
+                            <a href="https://www.semas.or.kr/" target="_blank" rel="noopener noreferrer">소상공인시장진흥공단 정책융자 지원센터</a>
+                            <span>전국 소상공인을 위한 직접 대출 및 대리 대출 신청 요령, 정책 공고 및 필수 가이드</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 6: In-depth Contextual Analysis (Heavy Text Density for Search Crawlers) -->
+        <section class="section section-gray" id="detailed-info">
+            <div class="container">
+                <div class="section-header">
+                    <h2>사업자 대출서류 준비에 관한 깊이 있는 실무적 조언</h2>
+                    <p>디지털 트랜스포메이션 시대, 대출 서류를 준비할 때 꼭 알아두어야 할 실무 프로세스와 숨겨진 수수료 및 기간 요인을 철저히 파악해 봅니다.</p>
+                </div>
+
+                <div class="card" style="margin-bottom: 30px; line-height: 1.9;">
+                    <p>다양한 규모와 형태를 가지고 자금을 신청하는 개인 및 법인 사장님들의 실제 자금 조달 프로세스를 조사해 보면, 금융 업무 경험이 부족한 <strong>신규</strong> 사업자분들이 서류 한 장이 모자라거나 발급일자가 초과해 반려되는 안타까운 사태를 매우 자주 보게 됩니다. 예컨대 <strong>디시</strong>인사이드 금융 갤러리나 자영업자들의 주 소통처인 <strong>보배드림</strong>, <strong>펨코</strong>, <strong>에펨코리아</strong> 자영업 포럼 등 여러 커뮤니티의 '대출 승인 성공 <strong>내돈내산 후기</strong>' 글들을 꼼꼼히 탐독해 보면 "서류 미비로 보완 명령을 받아 승인이 지체되는 동안 정작 필요한 기일 내에 자금을 대지 못했다"는 실패 <strong>후기</strong>들이 주를 이루고 있습니다.</p>
+                    
+                    <p>특히 국세 및 지방세 납세증명서는 단 하루라도 세금 체납이 존재할 경우 절대 승인이 나지 않는 결정적 이유로 작동하므로 <strong>가장</strong> <strong>제일</strong> 먼저 확인해 주셔야 하는 서류입니다. 종종 <strong>계산기</strong> 프로그램을 사용하여 월 원리금과 지불 이자를 대략적으로 <strong>계산</strong>해 본 사장님들이 예상 <strong>금액</strong> 한도 및 저렴한 금리 <strong>비용</strong> 위주로만 눈길을 주는 우를 범하게 됩니다. 하지만 아무리 높은 평가 등급과 훌륭한 신용 이력을 갖추고 있는 사업자라고 할지라도, 객관적으로 증빙되지 않는 서류 더미는 대출 부결이라는 쓴맛을 안겨줄 뿐입니다. 핀테크 혁신 플랫폼 <strong>토스</strong> 모바일 <strong>어플</strong>이나 주요 1금융 은행의 다이렉트 자산 조회 <strong>앱</strong>을 깔아두어 자동 마이데이터 전송을 동기화하는 비대면 온라인 제출 <strong>다이렉트</strong> 기능들을 적극적으로 활용하면 이러한 행정적 실수를 엄청나게 줄일 수 있습니다.</p>
+
+                    <p>여기에 덧붙여 대표자들이 마주치는 심사의 보편적 <strong>장단점</strong> 중 하나는 서류 발급을 외부 대행 <strong>업체</strong>에 비싼 <strong>가격</strong>으로 의뢰할 때 발생하는 불필요한 과다 지출입니다. 정부 정책 자금 상담 및 행정 <strong>컨설팅</strong>이라는 허울 좋은 명목 아래 일부 불법 브로커 <strong>전문</strong> <strong>업체</strong>가 고액의 자문 수수료를 강요하거나, 가입 시 특별한 <strong>현금지원</strong>이나 고가의 <strong>사은품</strong> 또는 <strong>지원금</strong> 사은 행사를 벌이며 사장님들의 조급함을 악용하고 있으니 신중하게 분별하셔야 합니다. 대한민국 행정안전부와 국세청은 모든 국민이 공정하고 안전하게 수수료 제로 혹은 극히 저렴한 인지세 요금만을 내고 <strong>온라인</strong> <strong>인터넷</strong> 사이트인 <strong>네이버</strong>, <strong>구글</strong> 포털에서 검색 한 번이면 다이렉트로 홈택스와 정부24로 모든 필수 인증 서류를 발급받을 수 있는 스마트 인프라를 마련해 두었습니다.</p>
+
+                    <p>최근에는 웹상의 방대한 원천 정보를 이해하기 위해 유튜브 채널의 동영상 강의, <strong>트위터</strong>나 <strong>인스타그램</strong>, <strong>페이스북</strong>의 간편 요약 피드, 그리고 카카오톡 단체 채팅방을 이용하는 것뿐만 아니라, <strong>제미나이</strong>(Gemini), <strong>챗지피티</strong>(ChatGPT) 같은 혁신적 초대형 AI 언어모델 인공지능(AI)을 활용하여 복잡한 세무 지식을 먼저 질의한 후 사전에 검토를 마치는 영리한 사업자분들이 많아졌습니다. 이와 같은 다각적인 경로를 통한 정보의 교차 검증은 잘못된 대부 중개인의 꼬임에 빠지지 않고 자신이 직접 발품을 파는 방식으로 금리가 상대적으로 <strong>저렴한곳</strong>과 보증 지원 <strong>혜택</strong>이 훌륭하게 제공되는 금융 융자 <strong>상품</strong> 및 특례 보증서 <strong>가입</strong> 경로를 분별할 힘을 줍니다. 어떠한 형태든 공공기관의 특별한 자금 감면 <strong>이벤트</strong>나 은행사 특별 한도 감면 혜택 등을 적용받기 위해서는 행정 마이데이터를 통한 확실한 과세 자료가 온전히 전송되어야 함을 반드시 잊지 마시기 바랍니다.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 7: FAQ Accordion -->
+        <section class="section" id="faq-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2>자주 묻는 질문 (FAQ)</h2>
+                    <p>사업자분들이 행정 문서를 준비할 때 흔히 겪는 의문들을 실무 관점에서 직관적이고 솔직하게 명확히 풀어드립니다.</p>
+                </div>
+
+                <div class="faq-container">
+                    <div class="faq-item">
+                        <button class="faq-trigger" onclick="toggleFaq(this)">Q1. 사업자등록을 한 지 3개월밖에 되지 않은 신규 대표자도 대출 서류를 준비하여 신청이 가능한가요?</button>
+                        <div class="faq-content">
+                            <p>그렇습니다. 사업자등록증명원은 즉시 발급이 가능하므로 외견상의 자격 요건은 성립됩니다. 다만, 최근 1~3년의 매출 실적을 대변하는 부가가치세 과세표준증명원이 아직 산출되지 않았으므로 일반 시중 은행의 한도 평가는 어려울 수 있습니다. 이럴 때는 신생 기업을 돕기 위해 설립된 지역신용보증재단이나 소상공인시장진흥공단의 초기 창업 자금 전용 제도를 알아보는 것이 좋습니다.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <button class="faq-trigger" onclick="toggleFaq(this)">Q2. 국세 완납 증명서의 남은 유효기간이 만료되었다면 즉시 거절 대상인가요?</button>
+                        <div class="faq-content">
+                            <p>모든 금융기관의 언더라이팅 부서(심사부)는 제출 서류의 진위 확인을 위해 발급일자로부터 보통 30일 이내의 서류만을 허용하는 것을 원칙으로 합니다. 지방세 및 국세 납세증명서에 적힌 유효기간이 단 하루라도 경과했다면 즉시 보완 제출 통보를 받게 되며, 보완이 안 될 시 심사는 자동 반려 및 거절될 수 있습니다. 따라서 번거롭더라도 홈택스 비대면 발급을 통해 당일 인쇄 혹은 온라인 전송 처리를 진행하시는 것이 최선입니다.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <button class="faq-trigger" onclick="toggleFaq(this)">Q3. 사업장 소재지를 임차가 아닌 공동 명의 주택으로 등록해 두었는데, 이때도 임대차계약서가 필요한가요?</p>
+                        <div class="faq-content">
+                            <p>주택이나 자가를 사업장으로 사용하는 경우에는 임대차 계약이 성립하지 않으므로 임대차계약서 사본은 제출하지 않아도 괜찮습니다. 대신 본인 또는 공동 명의 소유 주택의 권리 관계 확인을 위해 부동산 등기사항전부증명서(등기부등본)를 지참하셔야 합니다. 대법원 인터넷등기소에서 간단히 700원의 수수료를 지급하고 발급이 가능합니다.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <button class="faq-trigger" onclick="toggleFaq(this)">Q4. 법인 대출에서 대표이사 개인 주민등록 등초본을 가져오라고 하는 특정한 사유가 있나요?</p>
+                        <div class="faq-content">
+                            <p>법인은 엄밀히 말해 대표이사와 독립된 별개의 법적 권리 주체입니다. 하지만 대표이사의 실제 경영 여부 확인, 가계 대출과의 중복 수입 한도 계산, 실사 주소지 파악 등을 위해 대주주 혹은 등기 임원 본인의 인적사항 서류 제출을 요구받게 됩니다. 또한 정책적 보증 한도를 결정할 때 대표이사 개인 신용 정보를 전면 결합하여 평가하기 위한 필수 조건입니다.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <button class="faq-trigger" onclick="toggleFaq(this)">Q5. 모바일 토스나 카카오톡 등의 모바일 전송(스크래핑)으로 서류 제출을 마쳤는데, 종이 인쇄 서류도 따로 은행 지점에 내야 하나요?</p>
+                        <div class="faq-content">
+                            <p>대부분의 다이렉트 비대면 소액 여신 상품은 스크래핑 전송 및 행정 마이데이터 자동 매칭만으로 오프라인 서류 보완 요청을 절대 하지 않습니다. 그러나 자금의 규모가 크거나 법인 시설 매입을 위한 거액의 융자를 신청하시는 경우, 심층적 대면 실사와 연계된 보증 자금의 경우에는 원본 대조를 위해 인장 날인과 수기 날인이 포함된 오프라인 지류 문서 지참을 필히 권장하게 됩니다.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
     </main>
-  </body>
-</html>
+
+    <!-- Scripts Section -->
+    <script>
+        // Custom interactive calculation logic to increase stay-time
+        function calculateRequiredDocs() {
+            const userName = document.getElementById('userName').value;
+            const userPhone = document.getElementById('userPhone').value;
+            const bizType = document.getElementById('bizType').value;
+            const bizDuration = document.getElementById('bizDuration').value;
+            const bizLocation = document.getElementById('bizLocation').value;
+            const privacyConsent = document.getElementById('privacyConsent').checked;
+
+            if (!userName || !userPhone || !bizType || !bizDuration || !bizLocation || !privacyConsent) {
+                alert("필수 입력 사항들을 모두 정확히 기재해 주십시오.");
+                return;
+            }
+
+            const resultPanel = document.getElementById('resultPanel');
+            const checklistResult = document.getElementById('checklistResult');
+            
+            // Generate list dynamically based on business type
+            let docs = [];
+            
+            // Baseline common documents
+            docs.push({ desc: "대표자 본인 신분증 (주민등록증 또는 운전면허증)", origin: "주민센터 내방" });
+            docs.push({ desc: "국세 완납 증명서 (유효기간 유의)", origin: "국세청 홈택스 온라인" });
+            docs.push({ desc: "지방세 완납 증명서 (체납 내역이 없어야 함)", origin: "정부24 민원실" });
+
+            if (bizType === "personal") {
+                docs.push({ desc: "사업자등록증명원 (최근 1개월 내 발급)", origin: "국세청 홈택스" });
+                docs.push({ desc: "부가가치세 과세표준증명원 (최근 3개년)", origin: "국세청 홈택스" });
+                docs.push({ desc: "종합소득세 기준 소득금액증명원", origin: "국세청 홈택스" });
+                docs.push({ desc: "사업장 임대차계약서 사본 (자가인 경우 미제출)", origin: "체결 계약서 지참" });
+                docs.push({ desc: "대표자 주민등록등본 및 초본 (과거 인적사항 변동 포함)", origin: "정부24 인터넷" });
+            } else if (bizType === "corporate") {
+                docs.push({ desc: "법인등기사항전부증명서 (법인등기부등본)", origin: "대법원 인터넷등기소" });
+                docs.push({ desc: "법인인감증명서 (3개월 내 발급분)", origin: "대법원 등기소 오프라인" });
+                docs.push({ desc: "법인 주주명부 (법인 인감 날인 필)", origin: "회사 자체 서식 준비" });
+                docs.push({ desc: "최근 3개년 표준 재무제표증명원 (비교 분석용)", origin: "세무대리인 또는 홈택스" });
+                docs.push({ desc: "부가가치세 과세표준증명원 (법인 한도 계산용)", origin: "국세청 홈택스" });
+                docs.push({ desc: "대표이사 개인 주민등록 등초본", origin: "정부24 발급" });
+            } else if (bizType === "ready") {
+                docs.push({ desc: "예비 창업자 전용 사업계획서", origin: "기관 제공 지정 양식" });
+                docs.push({ desc: "가맹점 창업의 경우 가맹 계약서 또는 창업 도급 계약서 사본", origin: "프랜차이즈 가맹본부" });
+                docs.push({ desc: "대표자 개인 주민등록등초본", origin: "정부24 발급" });
+                docs.push({ desc: "창업 준비 관련 실소요 견적서 및 물품 납품 계약 서류", origin: "협력 거래처 발급" });
+            }
+
+            // Location-based Credit Guarantee recommendation
+            let locationLabel = "해당 지역 신용보증재단";
+            if (bizLocation === "seoul") locationLabel = "서울신용보증재단";
+            else if (bizLocation === "gyeonggi") locationLabel = "경기신용보증재단";
+            else if (bizLocation === "incheon") locationLabel = "인천신용보증재단";
+            else if (bizLocation === "busan") locationLabel = "부산신용보증재단";
+            else if (bizLocation === "daegu") locationLabel = "대구신용보증재단";
+
+            docs.push({ desc: `${locationLabel} 전용 보증 신청서 및 현장 실사 동의서`, origin: "지자체 보증재단 홈" });
+
+            // Render output
+            checklistResult.innerHTML = "";
+            docs.forEach(function(item) {
+                const itemDiv = document.createElement("div");
+                itemDiv.className = "checklist-item";
+                
+                const descSpan = document.createElement("span");
+                descSpan.className = "checklist-item-desc";
+                descSpan.textContent = "[ ] " + item.desc;
+
+                const originSpan = document.createElement("span");
+                originSpan.className = "checklist-item-origin";
+                originSpan.textContent = item.origin;
+
+                itemDiv.appendChild(descSpan);
+                itemDiv.appendChild(originSpan);
+                checklistResult.appendChild(itemDiv);
+            });
+
+            resultPanel.style.display = "block";
+            
+            // smooth scroll to result
+            resultPanel.scrollIntoView({ behavior: 'smooth' });
+        }
+
+        // Accordion Toggle logic
+        function toggleFaq(button) {
+            const item = button.parentElement;
+            const isActive = item.classList.contains('active');
+            
+            // Close all items
+            const allItems = document.querySelectorAll('.faq-item');
+            allItems.forEach(i => i.classList.remove('active'));
+
+            if (!isActive) {
+                item.classList.add('active');
+            }
+        }
+    </script>
+  
